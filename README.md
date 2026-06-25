@@ -39,3 +39,18 @@
     ```python
     self.relations_timeline.h(0) # superposn (50%) or interference(100% conflict or peace due to introduction of interference)
     ```
+
+### Phase 3 : Quantum Optimal Strategy Search : Grover's Search Algorithm
+#### ⚙️ Approach
+##### 1. Oracle : marks the `required state` via `phase-flip`
+- identifies the `required state` and marks it.
+- but this isn't visible until interference amplifies its `amplitude`.
+- ![Oracle](assets/oracle.png)
+
+##### 2. Diffuser : cause interference
+- calculates the `average amplitude` and store in `|00>` via `H-gate`
+- flip amplitudes w.r.t. `average amplitude` to get new amplitudes.
+- inteference causes amplitudes of `marked` state to amplify to &asymp; 1 i.e. `Prob = 100%` and amplitudes of `non-marked` states to shrink to &asymp; 0 i.e. `Prob = 0%`  
+- ![Diffuser](assets/diffuser.png)
+
+##### 3. repeat (π/4) × √N, where N = 2<sup>n</sup>, n = number of qubits used. (here n = 2 => so only 1 iteration enough)
